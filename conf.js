@@ -1,8 +1,8 @@
 exports.config = {
 	    framework: 'jasmine',
-        seleniumAddress: 'http://localhost:4444/wd/hub',
+        //seleniumAddress: 'http://localhost:4444/wd/hub',
 
-        //'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
+        'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 
         specs: ['test4.js'],
         //allScriptsTimeout: 20000,
@@ -14,17 +14,22 @@ exports.config = {
           'browserName': 'Chrome'
          },
 
-
-
-        /* run on Browser Stack
+/*
+        // run on Browser Stack
         'capabilities': {
 
         'browserstack.user': 'mcarlotta',
         'browserstack.key': 'r8ueZnPbuGXi6BpMx8vn',
-        'browserName': 'EDGE'
+        'os': 'OS X',
+        'os_version': 'High Sierra',
+        'browserName': 'Safari',
+        'browser_version': '11.0',
+        'browserstack.debug': true,
+        'resolution': '1024x768'
         
-        },*/
+        },
        
+*/
        
          //Run for Android
          /*
@@ -35,7 +40,11 @@ exports.config = {
             deviceName: 'Android Emulator',
           },
 */
-        jasmineNodeOpts: { defaultTimeoutInterval: 260000 } }
+        jasmineNodeOpts: { 
+            defaultTimeoutInterval: 260000,
+            showColors: true,
+            isVerbose : true,
+            includeStackTrace : true } }
 
        
          // Options to be passed to Jasmine.
